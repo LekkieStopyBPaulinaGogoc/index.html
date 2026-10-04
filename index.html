@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabinet Podologiczny Lekkie Stopy | Paulina Gogoc</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-beige: #F9F6F0;
+            --bg-card: #FFFFFF;
+            --purple-primary: #3B2B48;
+            --purple-accent: #5C436E;
+            --purple-light: #ECE6F0;
+            --gold-accent: #C5A059;
+            --text-dark: #2A2A2A;
+            --text-muted: #666666;
+            --white: #FFFFFF;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-beige);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* HEADER & NAV */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(249, 246, 240, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--purple-primary);
+            text-decoration: none;
+        }
+
+        .logo1 {
+            width: 80px;
+            height: 80px;
+			border: 1.5px solid navy;
+           
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--purple-accent);
+        }
+
+        .btn-nav {
+            background-color: var(--purple-primary);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 30px;
+            transition: background-color 0.3s !important;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--purple-accent);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 180px 180px 20px 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            line-height: 1.1;
+            color: var(--purple-primary);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--purple-primary);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 20px rgba(59, 43, 72, 0.15);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: var(--purple-accent);
+        }
+
+        /* SECTION COMMON */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--purple-primary);
+            margin-bottom: 3.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* O MNIE */
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 4rem;
+            align-items: center;
+            background-color: var(--white);
+            padding: 3.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .about-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .about-text h3 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--purple-primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .features {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--purple-primary);
+        }
+
+        /* RODZAJE TERAPII */
+        .therapies-section {
+            background-color: var(--purple-primary);
+            color: var(--white);
+        }
+
+        .therapies-section .section-title {
+            color: var(--white);
+        }
+
+        .therapies-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .therapy-card {
+            background-color: var(--white);
+            color: var(--text-dark);
+            padding: 2.5rem;
+            border-radius: 16px;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .therapy-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .therapy-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .therapy-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--purple-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .therapy-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--purple-primary);
+            text-transform: uppercase;
+        }
+
+        .therapy-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #EEEEEE;
+            padding-top: 1rem;
+        }
+
+        .details-btn {
+            background: none;
+            border: none;
+            color: var(--purple-primary);
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .arrow-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--purple-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--purple-primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* KONTAKT */
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background-color: var(--white);
+            padding: 4rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--purple-primary);
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .info-item icon {
+            font-size: 1.2rem;
+            color: var(--purple-primary);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--purple-primary);
+        }
+
+        .btn-submit {
+            background-color: var(--purple-primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--purple-accent);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--bg-beige);
+            border-top: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 900px) {
+            .hero, .about-container, .therapies-grid, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-image {
+                height: 380px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.jpeg" class='logo1'>
+				Lekkie Stopy B Paulina Gogoc
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#o-mnie">O MNIE</a></li>
+                    <li><a href="#terapie">RODZAJE TERAPII</a></li>
+                    <li><a href="#kontakt">KONTAKT</a></li>
+                    <li><a href="#kontakt" class="btn-nav">UMÓW WIZYTĘ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-image-wrapper">
+            <img src="IMG-20260912-WA0007.jpg" alt="Paulina Gogoc - Podolog" class="hero-image">
+        </div>
+        <div class="hero-content">
+            <h1>Profesjonalna Opieka Podologiczna</h1>
+            <p>Odkryj lekkość każdego kroku w Gabinecie Lekkie Stopy Pauliny Gogoc. Specjalistyczna pielęgnacja i leczenie Twoich stóp.</p>
+            <a href="#kontakt" class="btn-primary">UMÓW WIZYTĘ ONLINE</a>
+        </div>
+    </section>
+
+    <!-- SECTION O MNIE -->
+    <section id="o-mnie">
+        <h2 class="section-title">O MNIE</h2>
+        <div class="about-container">
+            <img src="IMG-20260912-WA0007.jpg" alt="Paulina Gogoc podczas pracy" class="about-img">
+            <div class="about-text">
+                <h3>Poznaj Paulinę Gogoc</h3>
+                <p>Jestem dyplomowaną podolożką z wieloletnim doświadczeniem. Moja pasja to pomoc pacjentom w powrocie do zdrowia i komfortu chodu.</p>
+                <p>W moim gabinecie dbam o każdy detal, aby zapewnić najwyższy standard opieki, higieny oraz przyjazną i bezpieczną atmosferę.</p>
+                <div class="features">
+                    <span class="feature-item">🎓 Dyplomowany Specjalista</span>
+                    <span class="feature-item">🛡️ Najwyższa Higiena</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION RODZAJE TERAPII -->
+    <section id="terapie" class="therapies-section">
+        <h2 class="section-title">RODZAJE TERAPII</h2>
+        <div class="therapies-grid">
+            
+            <div class="therapy-card">
+                <div>
+                    <div class="therapy-header">
+                        <div class="therapy-icon">🦶</div>
+                        <h4>Pedicure Medyczny</h4>
+                    </div>
+                    <p>Kompleksowa pielęgnacja stóp i paznokci, profesjonalne usuwanie zrogowaceń oraz opracowanie płytki paznokciowej.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="details-btn">Szczegóły</button>
+                    <a href="#kontakt" class="arrow-btn">&rarr;</a>
+                </div>
+            </div>
+
+            <div class="therapy-card">
+                <div>
+                    <div class="therapy-header">
+                        <div class="therapy-icon">🩹</div>
+                        <h4>Terapia Wrastających Paznokci</h4>
+                    </div>
+                    <p>Skuteczne i bezbolesne metody korekcji wrastających paznokci za pomocą klamer podologicznych.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="details-btn">Szczegóły</button>
+                    <a href="#kontakt" class="arrow-btn">&rarr;</a>
+                </div>
+            </div>
+
+            <div class="therapy-card">
+                <div>
+                    <div class="therapy-header">
+                        <div class="therapy-icon">✨</div>
+                        <h4>Usuwanie Modzeli i Odcisków</h4>
+                    </div>
+                    <p>Szybkie i bezpieczne usuwanie bolesnych zmian skórnych oraz indywidualny dobór odciążeń.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="details-btn">Szczegóły</button>
+                    <a href="#kontakt" class="arrow-btn">&rarr;</a>
+                </div>
+            </div>
+
+            <div class="therapy-card">
+                <div>
+                    <div class="therapy-header">
+                        <div class="therapy-icon">🩺</div>
+                        <h4>Pielęgnacja Stopy Cukrzycowej</h4>
+                    </div>
+                    <p>Specjalistyczna profilaktyka i zabiegi dedykowane dla pacjentów z grup ryzyka i cukrzycą.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="details-btn">Szczegóły</button>
+                    <a href="#kontakt" class="arrow-btn">&rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION KONTAKT -->
+    <section id="kontakt">
+        <h2 class="section-title">KONTAKT</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Skontaktuj się</h3>
+                <div class="info-item">
+                    <span>📍</span>
+                    <div>
+                        <strong>Adres Gabinetu:</strong><br>
+                        ul. Wojska Polskiego 86, Zielona Góra
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span>📞</span>
+                    <div>
+                        <strong>Telefon:</strong><br>
+                        +48 887 795 858
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span>✉️</span>
+                    <div>
+                        <strong>E-mail:</strong><br>
+                        email@lekkiestopy.com
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Wiadomość została wysłana!');">
+                <div class="form-group">
+                    <input type="text" placeholder="Twoje Imię i Nazwisko" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Twój Adres E-mail" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="4" placeholder="Wiadomość / Zapytanie o termin" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">UMÓW WIZYTĘ</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Gabinet Podologiczny Lekkie Stopy B Paulina Gogoc. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+</body>
+</html>
